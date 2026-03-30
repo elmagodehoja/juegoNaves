@@ -10,13 +10,13 @@ public enum Resolucion {
     VENTANA_QHD(new Dimension(2560, 1440)),
     VENTANA_VGA(new Dimension(800, 600));
 
-    private Dimension resolucion;
+    private Dimension dimension;
 
     private Resolucion(Dimension r){
-        this.resolucion = r;
+        this.dimension = r;
     }
 
     public Dimension getResolucion(){
-        return this.resolucion;
+        return this.dimension;
     }
 }
