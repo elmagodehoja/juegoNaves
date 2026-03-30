@@ -15,8 +15,11 @@ public class Juego {
     }
 
     public void iniciar(Escena e, Resolucion r){
-        this.consola = new Consola(r.getResolucion());
         this.resolucion = r;
+        int ancho = r.getResolucion().width;
+        int alto = r.getResolucion().height;
+        Consola consolaDaw = new Consola("Juego Naves",ancho,alto);
+        this.consola = new Consola();
         this.setEscena(e);
         this.detener = false;
 
@@ -44,9 +47,9 @@ public class Juego {
     }
 
     public int getAnchuraPantalla(){
-        return this.consola.
+        return this.resolucion.getResolucion().width;
     }
     public int getAlturaPantalla(){
-        return this.consola.
+        return this.resolucion.getResolucion().height;
     }
 }
