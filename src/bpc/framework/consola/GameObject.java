@@ -1,7 +1,8 @@
 package bpc.framework.consola;
 
 import bpc.daw.consola.Consola;
-// todo --> falta poner el import de las otras clases
+import bpc.framework.consola.Juego;
+import bpc.framework.consola.Escena;
 
 public abstract class GameObject implements ElementoJuego{
     protected Juego juego;
