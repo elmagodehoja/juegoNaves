@@ -31,16 +31,6 @@ public class Marcador extends GameObject {
     }
 
     @Override
-    public void añadir(GameObject obj) {
-
-    }
-
-    @Override
-    public void retirar(GameObject obj) {
-
-    }
-
-    @Override
     public void ejecutarFrame() {
         // todo --> Hacer lo del marcador cuando sepa como se ve en si la pantalla de juego para saber donde es mas optimo colocar el marcador
     }
