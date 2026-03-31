@@ -4,7 +4,6 @@ import bpc.daw.consola.Teclado;
 import bpc.framework.consola.SpriteGameObject;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.time.Instant;
 
@@ -23,10 +22,6 @@ public abstract class Nave extends SpriteGameObject {
         this.velocidad = v;
         this.ultimoDisparoRealizado = Instant.EPOCH;
     }
-
-    protected Nave() {
-    }
-
     public void dispara(){
         Instant actual = Instant.now();
         if(Duration.between(this.ultimoDisparoRealizado, actual).getSeconds() >= 1){
@@ -45,7 +40,7 @@ public abstract class Nave extends SpriteGameObject {
                  this.moverX(-this.velocidad);
             }
         }
-        if(teclado.teclaPulsada(this.teclaIzquierda)){
+        if(teclado.teclaPulsada(this.teclaDerecha)){
             if(this.getX() + this.getAnchura() + this.velocidad <= juego.getAnchuraPantalla()){
                 this.moverX(this.velocidad);
             }
