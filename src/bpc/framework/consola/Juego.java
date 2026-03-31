@@ -24,7 +24,7 @@ public class Juego {
         this.detener = false;
 
         Teclado teclado = this.consola.getTeclado();
-        while(detener == false && teclado.teclaPulsada(KeyEvent.VK_ESCAPE) == false){
+        while(this.detener == false && teclado.teclaPulsada(KeyEvent.VK_ESCAPE) == false){
             this.escena.ejecutarFrame();
             this.consola.esperarSiguienteFrame();
         }
