@@ -22,14 +22,12 @@ public void inicializar(){
         this.objectos = new ArrayList<>();
     }
 }
-    @Override
     public void añadir(GameObject obj){
         this.objectos.add(obj);
         this.juego = obj.juego;
         this.consola = obj.consola;
         obj.inicializar();
     }
-    @Override
     public void retirar(GameObject obj){
         obj.finalizar();
         this.objectos.remove(obj);
@@ -44,8 +42,6 @@ public void inicializar(){
     }
     @Override
     public void finalizar(){
-        for (int i = 0; i < this.objectos.size(); i++) {
-            this.objectos.remove(i);
-        }
+        this.objectos.clear();
     }
 }
