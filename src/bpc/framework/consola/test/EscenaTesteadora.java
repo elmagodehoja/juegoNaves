@@ -10,6 +10,9 @@ public class EscenaTesteadora extends Escena implements ElementoJuego {
         super();
         this.tester = new GameObjectTesteador();
     }
+    public GameObjectTesteador getTester(){
+        return this.tester;
+    }
     @Override
     public void inicializar() {
         this.tester.inicializar();
