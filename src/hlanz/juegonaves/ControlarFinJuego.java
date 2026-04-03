@@ -9,16 +9,6 @@ public class ControlarFinJuego extends GameObject {
     public void inicializar() {}
 
     @Override
-    public void añadir(GameObject obj) {
-
-    }
-
-    @Override
-    public void retirar(GameObject obj) {
-
-    }
-
-    @Override
     public void ejecutarFrame() {
         // todo --> Hacer cuando estas las clases necesarias para que pueda acceder a la lista de enemigos
     }
