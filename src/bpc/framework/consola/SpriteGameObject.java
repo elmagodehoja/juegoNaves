@@ -20,6 +20,19 @@ public abstract class SpriteGameObject extends GameObject{
     }
 
     //Metodos
+
+    @Override
+    public void inicializar(){
+        Rectangle cuadroImagen = new Rectangle(0, 0, this.image.getWidth(null), this.image.getHeight(null));
+
+        this.sprite = this.consola.getCapaSprites().crearSprite(
+                this.image,
+                cuadroImagen,
+                this.puntoInicial.x,
+                this.puntoInicial.y
+        );
+    }
+
     public int getX(){
         return this.sprite.getX();
     }
@@ -50,5 +63,10 @@ public abstract class SpriteGameObject extends GameObject{
 
     public void setY(int y){
         this.sprite.moverY(y-this.sprite.getY());
+    }
+
+    @Override
+    public void finalizar(){
+        this.consola.getCapaSprites().eliminarSprite(this.sprite);
     }
 }
