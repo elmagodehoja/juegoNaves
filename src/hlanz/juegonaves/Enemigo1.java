@@ -13,7 +13,7 @@ public class Enemigo1 extends Enemigo{
 
     @Override
     public int getPuntuacion() {
-        return 0;
+        return this.velocidad*2;
     }
 
     @Override
