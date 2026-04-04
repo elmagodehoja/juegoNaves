@@ -4,6 +4,8 @@ import bpc.framework.consola.Escena;
 import bpc.framework.consola.Resolucion;
 import bpc.framework.consola.SpriteGameObject;
 
+import java.awt.*;
+
 public class Disparo extends SpriteGameObject {
     private int idjugador;
     private int vx;
@@ -11,22 +13,26 @@ public class Disparo extends SpriteGameObject {
 
     public Disparo(int id, int x, int y, int vx, int vy){
         this.idjugador=id;
-        super( ,x,y);
+        super( CacheImagenes.getInstancia().getImage("disparo.png"),x,y);
         this.vx=vx;
         this.vy=vy;
     }
     @Override
     public void inicializar() {
-        this.escena.inicializar();
+
     }
     @Override
     public void ejecutarFrame() {
         this.moverX(vx);
         this.moverY(vy);
-        if (vx*vy<Resolucion.PANTALLA_COMPLETA)
+        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+        if (vx> dimension.width || vy>dimension.height || vx<0 || vy<0){
+            this.escena.finalizar();
+        }
+
     }
     @Override
     public void finalizar() {
-        this.escena.finalizar();
+
     }
 }
