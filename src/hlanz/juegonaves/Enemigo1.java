@@ -17,21 +17,11 @@ public class Enemigo1 extends Enemigo{
     }
 
     @Override
-    public void inicializar() {
-        super.inicializar();
-    }
-
-    @Override
     public void ejecutarFrame() {
         moverX(this.velocidad);
 
         if (getX() <= 0 || (getX() + getAnchura()) >= this.juego.getAnchuraPantalla()) {
             this.velocidad = -this.velocidad;
         }
-    }
-
-    @Override
-    public void finalizar() {
-        super.finalizar();
     }
 }
