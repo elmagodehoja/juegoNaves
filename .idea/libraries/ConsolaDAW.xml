@@ -1,6 +1,8 @@
 <component name="libraryTable">
   <library name="ConsolaDAW">
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Descargas/ConsolaDAW-20260329T134015Z-3-001/ConsolaDAW/ConsolaDAW/ConsolaDAW.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
