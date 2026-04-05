@@ -1,6 +1,8 @@
 package hlanz.juegonaves;
 
 import bpc.framework.consola.GameObject;
+
+import java.awt.*;
 import java.util.Arrays;
 
 public class Marcador extends GameObject {
@@ -32,7 +34,15 @@ public class Marcador extends GameObject {
 
     @Override
     public void ejecutarFrame() {
-        // todo --> Hacer lo del marcador cuando sepa como se ve en si la pantalla de juego para saber donde es mas optimo colocar el marcador
+        Graphics dibujar = this.consola.getCapaCanvas().getGraphics();
+
+        dibujar.setColor(Color.BLACK);
+        dibujar.fillRect(0, 0, this.juego.getAnchuraPantalla(), 40);
+
+        dibujar.setFont(new Font("Arial", Font.BOLD, 20));
+        dibujar.setColor(Color.WHITE);
+        dibujar.drawString("Jugador 1: " + this.puntos[0], 20, 30);
+        dibujar.drawString("Jugador 2: " + this.puntos[1], this.juego.getAnchuraPantalla() - 200, 30);
     }
 
     @Override
