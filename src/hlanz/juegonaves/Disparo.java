@@ -29,7 +29,15 @@ public class Disparo extends SpriteGameObject {
         if (vx> dimension.width || vy>dimension.height || vx<0 || vy<0){
             this.escena.finalizar();
         }
-
+        JuegoNaves juegoNaves = new JuegoNaves();
+        Marcador marcador = new Marcador();
+        for (int i = 0; i <juegoNaves.getEnemigos().size() ; i++) {
+            if (juegoNaves.getEnemigos().get(i).getX() == this.vx && juegoNaves.getEnemigos().get(i).getY()==this.vy){
+                this.finalizar();
+                juegoNaves.getEnemigos().remove(i);
+                marcador.incrementarPuntos(this.idjugador, juegoNaves.getEnemigos().get(i).getPuntuacion());
+            }
+        }
     }
     @Override
     public void finalizar() {
