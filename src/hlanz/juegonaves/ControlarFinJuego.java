@@ -1,5 +1,6 @@
 package hlanz.juegonaves;
 
+import bpc.framework.consola.Escena;
 import bpc.framework.consola.GameObject;
 
 public class ControlarFinJuego extends GameObject {
@@ -10,7 +11,10 @@ public class ControlarFinJuego extends GameObject {
 
     @Override
     public void ejecutarFrame() {
-        // todo --> Hacer cuando estas las clases necesarias para que pueda acceder a la lista de enemigos
+        JuegoNaves juegoNaves = new JuegoNaves();
+        if (juegoNaves.getEnemigos().isEmpty()){
+            this.juego.detener();
+        }
     }
 
     @Override
