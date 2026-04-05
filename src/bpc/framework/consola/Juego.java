@@ -18,8 +18,7 @@ public class Juego {
         this.resolucion = r;
         int ancho = r.getResolucion().width;
         int alto = r.getResolucion().height;
-        Consola consolaDaw = new Consola("Juego Naves",ancho,alto);
-        this.consola = new Consola();
+        this.consola = new Consola("Juego Naves",ancho,alto);
         this.setEscena(e);
         this.detener = false;
 
