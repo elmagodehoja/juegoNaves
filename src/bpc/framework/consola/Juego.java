@@ -9,7 +9,7 @@ public class Juego {
     private Consola consola;
     private Escena escena;
     private Resolucion resolucion;
-    private  boolean detener;
+    private boolean detener;
 
     public Juego(){
     }
@@ -31,6 +31,9 @@ public class Juego {
     }
 
     public void setEscena(Escena e){
+        if (e == null) {
+            throw new IllegalArgumentException("La escena no puede ser nula");
+        }
         this.escena = e;
         this.escena.juego = this;
         this.escena.consola = this.consola;

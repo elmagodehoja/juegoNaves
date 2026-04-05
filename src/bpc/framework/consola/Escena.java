@@ -20,13 +20,15 @@ public void inicializar(){
         throw new IllegalStateException("Hay que añadir la escena al juego para poder inicializarla");
     }else {
         this.objectos = new ArrayList<>();
+        this.añadirObjetosIniciales();
     }
 }
     public void añadir(GameObject obj){
-        this.objectos.add(obj);
-        this.juego = obj.juego;
-        this.consola = obj.consola;
+        obj.juego = this.juego;
+        obj.consola = this.consola;
+        obj.escena = this;
         obj.inicializar();
+        this.objectos.add(obj);
     }
     public void retirar(GameObject obj){
         obj.finalizar();
@@ -42,6 +44,8 @@ public void inicializar(){
     }
     @Override
     public void finalizar(){
-        this.objectos.clear();
+        while (!this.objectos.isEmpty()) {
+            this.retirar(this.objectos.get(0));
+        }
     }
 }

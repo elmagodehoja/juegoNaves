@@ -1,7 +1,5 @@
 package hlanz.juegonaves;
 
-import bpc.framework.consola.Escena;
-import bpc.framework.consola.Resolucion;
 import bpc.framework.consola.SpriteGameObject;
 
 import java.awt.*;

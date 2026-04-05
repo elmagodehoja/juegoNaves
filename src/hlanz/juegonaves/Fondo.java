@@ -5,7 +5,6 @@ import bpc.daw.consola.Consola;
 import bpc.framework.consola.GameObject;
 
 import java.awt.*;
-import java.awt.image.ImageObserver;
 
 public class Fondo extends GameObject {
     private Image imagen;
