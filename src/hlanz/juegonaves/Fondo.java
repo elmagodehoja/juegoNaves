@@ -25,8 +25,8 @@ public class Fondo extends GameObject {
 
     @Override
     public void ejecutarFrame() {
-        Consola consola = new Consola();
-        CapaCanvas capaCanvas = consola.getCapaCanvas();
+        Consola consola = super.consola;
+        CapaCanvas capaCanvas = super.consola.getCapaCanvas();
         Graphics graphics = capaCanvas.getGraphics();
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
         this.imagen.getGraphics().drawRect(0,0, dimension.width,dimension.height);
