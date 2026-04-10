@@ -23,17 +23,21 @@ public class Disparo extends SpriteGameObject {
     public void ejecutarFrame() {
         this.moverX(vx);
         this.moverY(vy);
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        if (vx> dimension.width || vy>dimension.height || vx<0 || vy<0){
+        if (vx> this.juego.getAnchuraPantalla() || vy>this.juego.getAlturaPantalla() || vx<0 || vy<0){
             this.escena.finalizar();
         }
-        JuegoNaves juegoNaves = new JuegoNaves();
-        Marcador marcador = new Marcador();
-        for (int i = 0; i <juegoNaves.getEnemigos().size() ; i++) {
-            if (juegoNaves.getEnemigos().get(i).getX() == this.vx && juegoNaves.getEnemigos().get(i).getY()==this.vy){
-                this.finalizar();
-                juegoNaves.getEnemigos().remove(i);
-                marcador.incrementarPuntos(this.idjugador, juegoNaves.getEnemigos().get(i).getPuntuacion());
+        JuegoNaves juegoNaves = (JuegoNaves) this.escena;
+        Marcador marcador = juegoNaves.getMarcador();
+        Rectangle rectDisparo = new Rectangle(this.getX(), this.getY(), this.getAnchura(), this.getAltura());
+        boolean impactado = false;
+        for (int i = 0; i < juegoNaves.getEnemigos().size() && !impactado; i++) {
+            Enemigo enemigo = juegoNaves.getEnemigos().get(i);
+            Rectangle rectEnemigo = new Rectangle(enemigo.getX(), enemigo.getY(), enemigo.getAnchura(), enemigo.getAltura());
+            if (rectDisparo.intersects(rectEnemigo)) {
+                marcador.incrementarPuntos(this.idjugador, enemigo.getPuntuacion());
+                this.escena.retirar(enemigo);
+                this.escena.retirar(this);
+                impactado = true;
             }
         }
     }

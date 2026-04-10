@@ -13,18 +13,14 @@ public class Marcador extends GameObject {
     }
 
     public void incrementarPuntos(int jugador, int puntos){
-        if (jugador < 1 || jugador > 2){
+        if (jugador < 0 || jugador > 1){
             throw new IllegalArgumentException("Numero de jugador incorrecto");
         }
-        if (puntos < 1){
+        if (puntos < 0){
             throw new IllegalArgumentException("La cantidad de puntos para asignar debe ser mayor o igual a 1");
         }
 
-        if (jugador-1 == 0){
-            this.puntos[0] += puntos;
-        } else {
-            this.puntos[1] += puntos;
-        }
+        this.puntos[jugador] += puntos;
     }
 
     @Override

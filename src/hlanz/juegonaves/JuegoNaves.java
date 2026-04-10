@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class JuegoNaves extends Escena {
     private List<Enemigo> enemigos;
+    private Marcador marcador;
 
     public JuegoNaves(){
         this.enemigos = new ArrayList<>();
@@ -20,6 +21,10 @@ public class JuegoNaves extends Escena {
 
     public List<Enemigo> getEnemigos(){
         return this.enemigos;
+    }
+
+    public Marcador getMarcador() {
+        return this.marcador;
     }
 
     @Override
@@ -40,10 +45,10 @@ public class JuegoNaves extends Escena {
 
     @Override
     protected void añadirObjetosIniciales() {
-        super.añadir(new ControlarFinJuego());
-        super.añadir(new Fondo(1));
-        super.añadir(new Nave1(KeyEvent.VK_LEFT,KeyEvent.VK_RIGHT,KeyEvent.VK_SPACE));
-        super.añadir(new Nave2(KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_E));
+        this.añadir(new ControlarFinJuego());
+        this.añadir(new Fondo(1));
+        this.añadir(new Nave1(KeyEvent.VK_LEFT,KeyEvent.VK_RIGHT,KeyEvent.VK_SPACE));
+        this.añadir(new Nave2(KeyEvent.VK_A,KeyEvent.VK_D,KeyEvent.VK_E));
         Random r = new Random();
 
         for(int i = 0; i < 5; i++){
@@ -51,7 +56,7 @@ public class JuegoNaves extends Escena {
             int y = r.nextInt(400);
             int v = r.nextInt(3) + 1;
 
-            super.añadir(new Enemigo1(x, y, v));
+            this.añadir(new Enemigo1(x, y, v));
         }
 
         for(int i = 0; i < 3; i++){
@@ -60,9 +65,10 @@ public class JuegoNaves extends Escena {
             int radio = r.nextInt(100) + 50;
             int v = r.nextInt(2) + 1;
 
-            super.añadir(new Enemigo2(cx, cy, cx, cy, radio, v));
+            this.añadir(new Enemigo2(cx, cy, cx, cy, radio, v));
         }
-        super.añadir(new Marcador());
+        this.marcador = new Marcador();
+        this.añadir(this.marcador);
     }
 
     public static void main(String[] args) {

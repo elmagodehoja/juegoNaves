@@ -25,12 +25,10 @@ public class Fondo extends GameObject {
 
     @Override
     public void ejecutarFrame() {
-        Consola consola = super.consola;
         CapaCanvas capaCanvas = super.consola.getCapaCanvas();
-        Graphics graphics = capaCanvas.getGraphics();
         Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-        this.imagen.getGraphics().drawRect(0,0, dimension.width,dimension.height);
-        this.camara.height+=this.velocidadCamara;
+        capaCanvas.getGraphics().drawImage(this.imagen, 0, 0, dimension.width, dimension.height, this.camara.x, this.camara.y, this.camara.x + this.camara.width, this.camara.y + this.camara.height, null);
+        this.camara.y+=this.velocidadCamara;
         if (this.camara.y + this.camara.height >= this.imagen.getHeight(null)) {
             this.camara.y = 0;
         }

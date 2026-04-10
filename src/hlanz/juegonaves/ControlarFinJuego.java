@@ -11,7 +11,7 @@ public class ControlarFinJuego extends GameObject {
 
     @Override
     public void ejecutarFrame() {
-        JuegoNaves juegoNaves = new JuegoNaves();
+        JuegoNaves juegoNaves = (JuegoNaves) this.escena;
         if (juegoNaves.getEnemigos().isEmpty()){
             this.juego.detener();
         }
