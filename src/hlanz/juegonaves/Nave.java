@@ -33,11 +33,17 @@ public abstract class Nave extends SpriteGameObject {
     protected abstract void realizarDisparo();
 
     @Override
+    public void inicializar() {
+        super.inicializar();
+        this.setY(this.juego.getAlturaPantalla() - 100);
+    }
+
+    @Override
     public void ejecutarFrame(){
         Teclado teclado = this.consola.getTeclado();
         if(teclado.teclaPulsada(this.teclaIzquierda)){
             if(this.getX() - this.velocidad >= 0){
-                 this.moverX(-this.velocidad);
+                this.moverX(-this.velocidad);
             }
         }
         if(teclado.teclaPulsada(this.teclaDerecha)){
