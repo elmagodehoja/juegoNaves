@@ -6,7 +6,7 @@ public class Nave1 extends Nave{
     }
     @Override
     protected void realizarDisparo() {
-        Disparo d = new Disparo(0,this.getX(),this.getY(),0,-10);
+        Disparo d = new Disparo(0,this.getX()+this.getAnchura()/2,this.getY(),0,-10);
         this.escena.añadir(d);
     }
 }
