@@ -73,6 +73,6 @@ public class JuegoNaves extends Escena {
 
     public static void main(String[] args) {
         Juego juego1 = new Juego();
-        juego1.iniciar(new JuegoNaves(), Resolucion.VENTANA_FULLHD);
+        juego1.iniciar(new JuegoNaves(), Resolucion.PANTALLA_COMPLETA);
     }
 }
