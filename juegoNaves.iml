@@ -7,7 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="ConsolaDAW1" level="project" />
+    <orderEntry type="library" name="ConsolaDAW2" level="project" />
     <orderEntry type="library" name="ConsolaDAW3" level="project" />
+    <orderEntry type="library" name="ConsolaDAW4" level="project" />
     <orderEntry type="library" name="ConsolaDAW5" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
